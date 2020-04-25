@@ -1,0 +1,308 @@
+ Anotaciones Hibernate
+@AccessType
+A anotação @AccessType está obsoleta. Você deve usar o JPA @Access ou a anotação @AttributeAccessor nativa do Hibernate.
+
+@Any
+A anotação @Any é usada para definir a associação any-to-one , que pode apontar para um dos vários tipos de entidade.
+
+@AnyMetaDef
+A anotação @AnyMetaDef é usada para fornecer metadados sobre um mapeamento @ManyToAny ou @ManyToAny .
+
+@AnyMetaDefs
+A anotação @AnyMetaDefs é usada para agrupar várias anotações @AnyMetaDef .
+
+@AttributeAccessor
+A anotação @AttributeAccessor é usada para especificar um PropertyAccessStrategy customizado. Isso só deve ser usado para nomear um PropertyAccessStrategy personalizado. Para o tipo de acesso de propriedade / campo, a anotação JPA @Access deve ser preferida. No entanto, se essa anotação for usada com valor = “propriedade” ou valor = “campo”, ela funcionará exatamente como o uso correspondente da anotação JPA @Access .
+
+@BatchSize
+A anotação @BatchSize é usada para especificar o tamanho do lote que carrega as entradas de uma coleção lenta.
+
+@Cache
+A anotação @Cache é usada para especificar o CacheConcurrencyStrategy de uma entidade raiz ou uma coleção.
+
+@Cascade
+A anotação @Cascade é usada para aplicar as estratégias CascadeType específicas do Hibernate (por exemplo, CascadeType.LOCK, CascadeType.SAVE_UPDATE, CascadeType.REPLICATE) em uma determinada associação.
+
+Para o JPA em cascata, prefiro usar o javax.persistence.CascadeType. Ao combinar as estratégias JPA e Hibernate CascadeType , o Hibernate mesclará os dois conjuntos de cascatas.
+
+@Check
+A anotação @Check é usada para especificar uma restrição SQL SQL arbitrária que pode ser definida no nível de classe.
+
+@CollectionId
+A anotação @CollectionId é usada para especificar uma coluna identificadora para uma coleção idbag .
+
+@CollectionType
+A anotação @CollectionType é usada para especificar um tipo de coleção customizado.
+
+A coleção também pode nomear um @Type, que define o tipo de hibernação dos elementos da coleção.
+
+@ColumnDefault
+A anotação @ColumnDefault é usada para especificar o valor DEFAULT DDL a ser aplicado ao usar o gerador de esquema automatizado. O mesmo comportamento pode ser obtido usando o atributo definition da anotação JPA @Column.
+
+@Columns
+A anotação @Columns é usada para agrupar várias anotações JPA @Column .
+
+@ColumnTransformer
+A anotação @ColumnTransformer é usada para customizar como um determinado valor de coluna é lido ou gravado no banco de dados.
+
+@ColumnTransformers
+A anotação @ColumnTransformers é usada para agrupar várias anotações @ColumnTransformer .
+
+@CreationTimestamp
+A anotação @CreationTimestamp é utilizada para especificar que o tipo temporal atualmente anotado deve ser inicializado com o valor de registro de data e hora da JVM atual.
+
+@DiscriminatorFormula
+A anotação @DiscriminatorFormula é usada para especificar um @Formula do Hibernate para resolver o valor do discriminador de herança.
+
+@DiscriminatorOptions
+A anotação @DiscriminatorOptions é usada para fornecer a força e inserir as propriedades do Discriminador.
+
+@DynamicInsert
+A anotação @DynamicInsert é usada para especificar que a instrução SQL INSERT deve ser gerada sempre que uma entidade for persistida.
+
+Por padrão, o Hibernate usa uma instrução INSERT em cache que define todas as colunas da tabela. Quando a entidade é anotada com a anotação @DynamicInsert, o PreparedStatement incluirá apenas as colunas não nulas.
+
+@DynamicUpdate
+A anotação @DynamicUpdate é usada para especificar que a instrução SQL UPDATE deve ser gerada sempre que uma entidade é modificada.
+
+Por padrão, o Hibernate usa uma instrução UPDATE armazenada em cache que define todas as colunas da tabela. Quando a entidade é anotada com a anotação @DynamicUpdate , o PreparedStatement incluirá apenas as colunas cujos valores foram alterados.
+
+@Entity
+A anotação @Entity está obsoleta. Use a anotação JPA @Entity .
+
+@Fetch
+A anotação @Fetch é usada para especificar o FetchMode específico do Hibernate (por exemplo, JOIN, SELECT, SUBSELECT) usado para a associação atualmente anotada.
+
+@FetchProfile
+A anotação @FetchProfile é usada para especificar um perfil de busca customizado, semelhante a um Gráfico de Entidade JPA.
+
+@FetchProfile.FetchOverride
+A anotação @FetchProfile.FetchOverride é usada em conjunto com a anotação @FetchProfile e é usada para substituir a estratégia de busca de uma associação de entidade particular.
+
+@FetchProfiles
+A anotação @FetchProfiles é usada para agrupar várias anotações @FetchProfile.
+
+@Filter
+A anotação @Filter é usada para adicionar filtros a uma entidade ou a entidade de destino de uma coleção.
+
+@FilterDef
+A anotação @FilterDef é usada para especificar uma definição @Filter (nome, condição padrão e tipos de parâmetro, se houver).
+
+@FilterDefs
+A anotação @FilterDefs é usada para agrupar várias anotações @FilterDef .
+
+@FilterJoinTable
+A anotação @FilterJoinTable é usada para adicionar recursos @Filter a uma coleção de tabelas de junção.
+
+@FilterJoinTables
+A anotação @FilterJoinTables é usada para agrupar várias anotações @FilterJoinTable .
+
+@Filters
+A anotação @Filters é usada para agrupar várias anotações @Filter .
+
+@ForeignKey
+A anotação @ForeignKey está obsoleta. Use a anotação JPA 2.1 @ForeignKey .
+
+@Formula
+A anotação @Formula é usada para especificar um fragmento SQL que é executado para preencher um determinado atributo de entidade.
+
+@Generated
+A anotação @Generated é usada para especificar que o atributo da entidade anotada atualmente é gerado pelo banco de dados.
+
+@GeneratorType
+A anotação @GeneratorType é usada para fornecer um ValueGenerator e um GenerationTime para o atributo gerado atualmente anotado.
+
+@GenericGenerator
+A anotação @GenericGenerator pode ser usada para configurar qualquer gerador de identificadores do Hibernate.
+
+@GenericGenerators
+A anotação @GenericGenerators é usada para agrupar várias anotações do @GenericGenerator .
+
+@Immutable
+A anotação @Immutable é usada para especificar que a entidade, atributo ou coleção anotada é imutável.
+
+@Index
+A anotação @Index está obsoleta. Use a anotação JPA @Index .
+
+@IndexColumn
+A anotação @IndexColumn está obsoleta. Use a anotação JPA @OrderColumn .
+
+@JoinColumnOrFormula
+A anotação @JoinColumnOrFormula é usada para especificar que a associação de entidades é resolvida através de uma junção FOREIGN KEY (por exemplo, @JoinColumn ) ou usando o resultado de uma dada fórmula SQL (por exemplo, @JoinFormula ).
+
+@JoinColumnsOrFormulas
+A anotação @JoinColumnsOrFormulas é usada para agrupar várias anotações @JoinColumnOrFormula .
+
+@JoinFormula
+A anotação @JoinFormula é usada como um substituto para @JoinColumn quando a associação não possui uma coluna FOREIGN KEY dedicada.
+
+@LazyCollection
+A anotação @LazyCollection é usada para especificar o comportamento de busca preguiçosa de uma determinada coleção.
+
+Os valores TRUE e FALSE estão obsoletos, pois você deve usar o atributo JPA FetchType da coleção @ElementCollection, @OneToMany ou @ManyToMany .
+
+
+ 
+O valor EXTRA não tem equivalente na especificação JPA e é usado para evitar o carregamento de toda a coleção mesmo quando a coleção é acessada pela primeira vez. Cada elemento é buscado individualmente usando uma consulta secundária.
+
+@LazyGroup
+A anotação @LazyGroup é usada para especificar que um atributo de entidade deve ser buscado junto com todos os outros atributos pertencentes ao mesmo grupo.
+
+Para carregar os atributos da entidade preguiçosamente, o aprimoramento do bytecode é necessário. Por padrão, todos os atributos de não coleta são carregados em um grupo chamado “DEFAULT”.
+
+Esta anotação permite definir diferentes grupos de atributos a serem inicializados juntos quando acessam um atributo no grupo.
+
+@LazyToOne
+A anotação @LazyToOne é usada para especificar as opções de preguiça, representadas por LazyToOneOption , disponíveis para uma associação @OneToOne ou @OneToOne .
+
+@ListIndexBase
+A anotação @ListIndexBase é usada para especificar o valor inicial de um índice de lista, conforme armazenado no banco de dados.
+
+Por padrão, os índices de lista são armazenados a partir de zero. Isso geralmente é usado em conjunto com @OrderColumn .
+
+@Loader
+A anotação @Loader é usada para substituir a consulta SELECT padrão usada para carregar um carregamento de entidade.
+
+@ManyToAny
+A anotação @ManyToAny é usada para especificar uma associação muitos para um quando o tipo de destino é resolvido dinamicamente.
+
+@MapKeyType
+A anotação @MapKeyType é usada para especificar o tipo de chave do mapa.
+
+@MetaValue
+A anotação @MetaValue é usada pela anotação @AnyMetaDef para especificar a associação entre um determinado valor de discriminador e um tipo de entidade.
+
+@NamedNativeQueries
+A anotação @NamedNativeQuery estende o JPA @NamedNativeQuery com recursos específicos do Hibernate.
+
+@NamedQueries
+A anotação @NamedQueries é usada para agrupar várias anotações @NamedQuery .
+
+@NamedQuery
+A anotação @NamedQuery estende o JPA @NamedQuery com recursos específicos do Hibernate.
+
+@Nationalized
+A anotação @Nationalized é usada para especificar que o atributo anotado atualmente é um tipo de caractere (por exemplo, String, Character, Clob) que é armazenado em um tipo de coluna nacionalizada (NVARCHAR, NCHAR, NCLOB).
+
+@NaturalId
+A anotação @NaturalId é usada para especificar que o atributo atualmente anotado faz parte do ID natural da entidade.
+
+@NaturalIdCache
+A anotação @NaturalIdCache é usada para especificar que os valores de id naturais associados à entidade anotada devem ser armazenados no cache de segundo nível.
+
+@NotFound
+A anotação @NotFound é usada para especificar a estratégia NotFoundAction para quando um elemento não é encontrado em uma determinada associação.
+
+@OnDelete
+A anotação @OnDelete é usada para especificar a estratégia de exclusão empregada pela coleção atualmente anotada, matriz ou subclasses unidas. Essa anotação é usada pela ferramenta de geração automática de esquema para gerar a diretiva em cascata DDL FOREIGN KEY apropriada.
+
+@OptimisticLock
+A anotação @OptimisticLock é usada para especificar se o atributo atualmente anotado acionará um incremento de versão de entidade ao ser modificado.
+
+@OptimisticLocking
+A anotação @OptimisticLocking é usada para especificar a estratégia de bloqueio otimista de entidade atualmente anotada.
+
+@OrderBy
+A anotação @OrderBy é usada para especificar uma diretiva de ordenação SQL para classificar a coleta atualmente anotada.
+
+Ele difere da anotação JPA @OrderBy porque a anotação JPA espera um fragmento de ordem JPQL, não uma diretiva SQL.
+
+@ParamDef
+A anotação @ParamDef é usada em conjunto com @FilterDef para que o Filtro de Hibernação possa ser personalizado com valores de parâmetros fornecidos pelo tempo de execução.
+
+@Parameter
+A anotação @Parameter é um parâmetro genérico (basicamente uma combinação de chave / valor) usado para parametrizar outras anotações, como @CollectionType , @GenericGenerator , @Type e @TypeDef .
+
+@Parent
+A anotação @Parent é usada para especificar que o atributo incorporável atualmente anotado faz referência à entidade proprietária.
+
+@Persister
+A anotação @Persister é usada para especificar uma entidade personalizada ou uma persistência de coleta.
+
+Para entidades, o persistero personalizado deve implementar a interface EntityPersister .
+
+
+ 
+Para coleções, o persistor customizado deve implementar a interface CollectionPersister .
+
+@Polymorphism
+A anotação @Polymorphism é usada para definir o PolymorphismType O Hibernate será aplicado às hierarquias de entidade.
+
+@Proxy
+A anotação @Proxy é usada para especificar uma implementação de proxy personalizada para a entidade atualmente anotada.
+
+@RowId
+A anotação @RowId é usada para especificar a coluna do banco de dados usada como uma pseudocoluna ROWID. Por exemplo, o Oracle define a pseudocoluna ROWID como algo que fornece o endereço de cada linha da tabela.
+
+@SelectBeforeUpdate
+A anotação @SelectBeforeUpdate é usada para especificar que o estado da entidade anotada atualmente seja selecionado no banco de dados ao determinar se deve ser executada uma atualização quando a entidade desanexada for reconectada.
+
+@Sort
+A anotação @Sort está obsoleta. Use as anotações @SortComparator ou @SortNatural específicas do Hibernate.
+
+@SortComparator
+A anotação @SortComparator é usada para especificar um Comparador para classificar o Conjunto / Mapa na memória.
+
+@SortNatural
+A anotação @SortNatural é usada para especificar que o Set / Map deve ser classificado usando a ordenação natural.
+
+@Source
+A anotação @Source é usada em conjunto com um atributo de entidade de data @Version hora @Version indicando o SourceType do valor de registro de data e hora.
+
+@SQLDelete
+A anotação @SQLDelete é usada para especificar uma instrução SQL DELETE personalizada para a entidade ou coleção atualmente anotada.
+
+@SQLDeleteAll
+A anotação @SQLDeleteAll é usada para especificar uma instrução SQL DELETE personalizada ao remover todos os elementos da coleção atualmente anotada.
+
+@SqlFragmentAlias
+A anotação @SqlFragmentAlias é usada para especificar um alias para um @Filter do Hibernate.
+
+O alias (por exemplo, myAlias) pode ser usado na cláusula de condição @Filter usando o alocador de espaço {alias} (por exemplo, {myAlias}).
+
+@SQLInsert
+A anotação @SQLInsert é usada para especificar uma instrução SQL INSERT personalizada para a entidade ou coleção atualmente anotada.
+
+@SQLUpdate
+A anotação @SQLUpdate é usada para especificar uma instrução SQL UPDATE personalizada para a entidade ou coleção atualmente anotada.
+
+@Subselect
+A anotação @Subselect é usada para especificar uma entidade imutável e somente leitura usando uma instrução SQL SELECT personalizada.
+
+@Synchronize
+A anotação @Synchronize é geralmente usada em conjunto com a anotação @Subselect para especificar a lista de tabelas de banco de dados usada pela consulta SQL @Subselect .
+
+@Table
+A anotação @Table é usada para especificar informações adicionais para uma anotação JPA @Table, como as instruções customizadas INSERT, UPDATE ou DELETE ou um FetchMode específico.
+
+@Tables
+A anotação @Tables é usada para agrupar várias anotações @Table .
+
+@Target
+A anotação @Target é usada para especificar uma implementação de destino explícita quando a associação atualmente anotada estiver usando um tipo de interface.
+
+@Tuplizer
+A anotação @Tuplizer é usada para especificar um tuplizador personalizado para a entidade atualmente anotada ou incorporável.
+
+@Tuplizers
+A anotação @Tuplizers é usada para agrupar várias anotações do @Tuplizer.
+
+@Type
+A anotação @Type é usada para especificar o @Type do Hibernate usado pelo atributo básico atualmente anotado.
+
+@TypeDef
+A anotação @TypeDef é usada para especificar uma definição @Type , que pode ser reutilizada posteriormente para vários mapeamentos básicos de atributos.
+
+@TypeDefs
+A anotação @TypeDefs é usada para agrupar várias anotações @TypeDef .
+
+@UpdateTimestamp A anotação @UpdateTimestamp é usada para especificar que o atributo de registro de data e hora anotado atualmente deve ser atualizado com o registro de data / hora da JVM atual sempre que a entidade proprietária for modificada.
+
+@ValueGenerationType
+A anotação @ValueGenerationType é usada para especificar que o tipo de anotação atual deve ser usado como um tipo de anotação de gerador.
+
+@Where
+A anotação @Where é usada para especificar uma cláusula SQL WHERE customizada usada ao buscar uma entidade ou uma coleção.
+
+@WhereJoinTable
+A anotação @WhereJoinTable é usada para especificar uma cláusula SQL WHERE customizada usada ao buscar uma tabela de coleta de junção.
